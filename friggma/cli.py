@@ -34,12 +34,12 @@ def init(src_folder, output, keep_unused):
     src_path = Path(src_folder).resolve()
     output_path = Path(output).resolve()
     
-    # 2. CREATE THE FOLDER (The missing piece)
+    # 2. CREATE THE FOLDER 
     if not output_path.exists():
         console.print(f"[green]Creating folder: {output_path.name}...[/green]")
         output_path.mkdir(parents=True, exist_ok=True)
     else:
-        # If it exists, ask to overwrite
+        # If it exists ask to overwrite
         if not Confirm.ask(f"[yellow]Folder '{output_path.name}' already exists. Overwrite contents?[/yellow]"):
             raise click.Abort()
 
